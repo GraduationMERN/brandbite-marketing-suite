@@ -19,6 +19,7 @@ const roles = [
     icon: User,
     position: "left",
     image: roleCustomer,
+    src: "https://brandbite-three.vercel.app/",
     description: [
       "Browse menu & add to cart",
       "Place normal or reward orders",
@@ -34,6 +35,7 @@ const roles = [
     icon: Shield,
     position: "left",
     image: roleAdmin,
+    src: "https://brandbite-three.vercel.app/admin",
     description: [
       "View daily sales, customers, reviews",
       "Track orders & payments",
@@ -49,6 +51,7 @@ const roles = [
     icon: ChefHat,
     position: "right",
     image: roleKitchen,
+    src: "https://brandbite-three.vercel.app/kitchen",
     description: [
       "Receive confirmed orders only",
       "View order details & items",
@@ -64,6 +67,7 @@ const roles = [
     icon: CreditCard,
     position: "right",
     image: roleCashier,
+    src: "https://brandbite-three.vercel.app/cashier",
     description: [
       "Receive all incoming orders",
       "Create direct orders via menu",
@@ -167,17 +171,28 @@ const RoleBasedDemo = () => {
           </div>
 
           {/* Desktop Mockup */}
-          <div ref={desktopRef} className="order-1 lg:order-2 w-full max-w-3xl">
-            <div className="desktop-frame">
-              <div ref={screenRef} className="desktop-screen aspect-video">
-                <img
-                  src={activeRoleData.image}
-                  alt={activeRoleData.name}
-                  className="w-full h-full object-cover"
-                />
+          <div ref={desktopRef} className="order-1  lg:order-2 w-full max-w-6xl ">
+            {activeRole == "customer" ? (
+              <div className="mobile-frame">
+                <div ref={screenRef} className="mobile-screen">
+                  <iframe
+                    key={activeRoleData.id}
+                    src={activeRoleData.src}
+                    className="w-full h-full"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="desktop-stand" />
+            ) : (
+              <div>
+                <div className="desktop-frame">
+                  <div ref={screenRef} className="desktop-screen aspect-video">
+                    <iframe key={activeRoleData.id} src={activeRoleData.src} className={`w-full h-full`}></iframe>
+                  </div>
+
+                </div>
+                <div className="desktop-stand" />
+              </div>
+            )}
           </div>
 
           {/* Right Role Selectors */}

@@ -3,11 +3,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/utils";
 
-import menuBrowsing from "@/assets/screens/menu-browsing.png";
+import menuBrowsing from "@/assets/screens/cart.png";
 import orderTracking from "@/assets/screens/order-tracking.png";
 import loyaltyRewards from "@/assets/screens/loyalty-rewards.png";
 import pushNotifications from "@/assets/screens/push-notifications.png";
-import reviewsRatings from "@/assets/screens/reviews-ratings.png";
+import reviewsRatings from "@/assets/screens/admin-dashboard.png";
 import whiteLabel from "@/assets/screens/white-label.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -39,8 +39,8 @@ const steps = [
   },
   {
     id: 5,
-    title: "Reviews & Ratings",
-    description: "Build trust with authentic customer reviews. Display ratings, respond to feedback, and showcase your restaurant's reputation.",
+    title: "Admin Dashboard",
+    description: "Powerful admin dashboard to manage orders, view sales analytics, handle customer reviews, and oversee all restaurant operations from one place.",
     image: reviewsRatings,
   },
   {
@@ -58,13 +58,13 @@ const FeatureWalkthrough = () => {
   const tabletRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
-
+  const stepsRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(titleRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 60%",
           toggleActions: "play none none reverse",
         },
         y: 30,
@@ -72,11 +72,21 @@ const FeatureWalkthrough = () => {
         duration: 0.6,
         ease: "power3.out",
       });
-
+        gsap.from(stepsRef.current, {
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 30%",
+          toggleActions: "play none none reverse",
+        },
+        y: 30,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+      });
       gsap.from(tabletRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 60%",
+          start: "top 10%",
           toggleActions: "play none none reverse",
         },
         y: 50,
@@ -127,7 +137,7 @@ const FeatureWalkthrough = () => {
         </h2>
 
         {/* Steps Navigation */}
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
+        <div ref={stepsRef} className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12">
           {steps.map((step, index) => (
             <button
               key={step.id}

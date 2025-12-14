@@ -56,9 +56,6 @@ const Navbar = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="ghost" size="sm">
-              Log in
-            </Button>
             <Button size="sm" className="shadow-glow">
               Request Demo
             </Button>
@@ -92,9 +89,6 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="pt-4 space-y-3">
-                <Button variant="outline" className="w-full">
-                  Log in
-                </Button>
                 <Button className="w-full shadow-glow">Request Demo</Button>
               </div>
             </div>
