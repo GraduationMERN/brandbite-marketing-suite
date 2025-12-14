@@ -83,14 +83,18 @@ const Hero = () => {
           {/* CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
             <Button size="lg" className="h-14 px-8 text-base font-semibold shadow-glow">
-              Request a Demo
+              <a href="#contact">
+                Request Demo
+              </a>
             </Button>
             <Button
               variant="outline"
               size="lg"
               className="h-14 px-8 text-base font-semibold"
             >
+              <a href={"https://wa.me/201063681459?text=Hello, Could you tell me about BrandBite pricing"} target="_blank">
               Contact Sales
+              </a>
             </Button>
           </div>
         </div>

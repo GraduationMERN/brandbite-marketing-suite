@@ -19,7 +19,6 @@ const Navbar = () => {
   const navLinks = [
     { label: "Features", href: "#tablet-section" },
     { label: "Demo", href: "#demo" },
-    { label: "Contact", href: "#contact" },
   ];
 
   return (
@@ -57,7 +56,9 @@ const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <Button size="sm" className="shadow-glow">
-              Request Demo
+              <a href="#contact">
+                Request Demo
+              </a>
             </Button>
           </div>
 
@@ -89,7 +90,11 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="pt-4 space-y-3">
-                <Button className="w-full shadow-glow">Request Demo</Button>
+                <Button className="w-full shadow-glow">
+                  <a href="#contact">
+                    Request Demo
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
