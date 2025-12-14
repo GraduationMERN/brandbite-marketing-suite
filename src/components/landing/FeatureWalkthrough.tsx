@@ -54,11 +54,12 @@ const steps = [
 const FeatureWalkthrough = () => {
   const [activeStep, setActiveStep] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const tabletRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
   const stepsRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const tabletRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.from(titleRef.current, {
@@ -75,7 +76,7 @@ const FeatureWalkthrough = () => {
         gsap.from(stepsRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 30%",
+          start: "top 50%",
           toggleActions: "play none none reverse",
         },
         y: 30,
@@ -86,14 +87,13 @@ const FeatureWalkthrough = () => {
       gsap.from(tabletRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 10%",
+          start: "top 20%",
           toggleActions: "play none none reverse",
         },
-        y: 50,
+        y: 30,
         opacity: 0,
-        duration: 0.8,
+        duration: 0.6,
         ease: "power3.out",
-        delay: 0.2,
       });
     }, sectionRef);
 
@@ -127,12 +127,9 @@ const FeatureWalkthrough = () => {
       id="tablet-section"
       className="relative py-20 md:py-32 bg-card"
     >
-      <div className="container px-4">
+      <div ref={contentRef} className="container px-4">
         {/* Section Title */}
-        <h2
-          ref={titleRef}
-          className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16"
-        >
+        <h2 ref={titleRef} className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16">
           How <span className="text-gradient">BrandBite</span> Works
         </h2>
 
@@ -165,8 +162,8 @@ const FeatureWalkthrough = () => {
         </div>
 
         {/* Tablet Mockup */}
-        <div ref={tabletRef} className="max-w-3xl mx-auto">
-          <div className="tablet-frame">
+        <div  className="max-w-3xl mx-auto">
+          <div ref={tabletRef} className="tablet-frame">
             <div className="tablet-screen aspect-[4/3]">
               <img
                 ref={imageRef}
