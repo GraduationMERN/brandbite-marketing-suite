@@ -19,7 +19,7 @@ const roles = [
     icon: User,
     position: "left",
     image: roleCustomer,
-    src: "https://brandbite-three.vercel.app/",
+    src: "https://brandbite-demo.vercel.app/",
     description: [
       "Browse menu & add to cart",
       "Place normal or reward orders",
@@ -35,7 +35,7 @@ const roles = [
     icon: Shield,
     position: "left",
     image: roleAdmin,
-    src: "https://brandbite-three.vercel.app/admin",
+    src: "https://brandbite-demo.vercel.app/admin",
     description: [
       "View daily sales, customers, reviews",
       "Track orders & payments",
@@ -51,7 +51,7 @@ const roles = [
     icon: ChefHat,
     position: "right",
     image: roleKitchen,
-    src: "https://brandbite-three.vercel.app/kitchen",
+    src: "https://brandbite-demo.vercel.app/kitchen",
     description: [
       "Receive confirmed orders only",
       "View order details & items",
@@ -67,7 +67,7 @@ const roles = [
     icon: CreditCard,
     position: "right",
     image: roleCashier,
-    src: "https://brandbite-three.vercel.app/cashier",
+    src: "https://brandbite-demo.vercel.app/cashier",
     description: [
       "Receive all incoming orders",
       "Create direct orders via menu",
