@@ -210,8 +210,8 @@
 
   .mobile-frame {
   @apply relative mx-auto rounded-[2.5rem] p-3;
-  width: 400px; /* 👈 CONTROL WIDTH HERE */
-  height: 700px;
+  width: 457px; /* 👈 CONTROL WIDTH HERE */
+  height: 800px;
   background: linear-gradient(
     145deg,
     hsl(220, 15%, 18%) 0%,

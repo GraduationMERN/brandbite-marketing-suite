@@ -171,7 +171,7 @@ const RoleBasedDemo = () => {
           </div>
 
           {/* Desktop Mockup */}
-          <div ref={desktopRef} className="order-1  lg:order-2 w-full max-w-6xl ">
+          <div ref={desktopRef} className="order-1 hidden lg:block  lg:order-2 w-full max-w-6xl ">
             {activeRole == "customer" ? (
               <div className="mobile-frame">
                 <div ref={screenRef} className="mobile-screen">
@@ -188,11 +188,22 @@ const RoleBasedDemo = () => {
                   <div ref={screenRef} className="desktop-screen aspect-video">
                     <iframe key={activeRoleData.id} src={activeRoleData.src} className={`w-full h-full`}></iframe>
                   </div>
-
                 </div>
                 <div className="desktop-stand" />
               </div>
             )}
+          </div>
+          
+          <div ref={desktopRef} className="order-1 block lg:hidden  lg:order-2 w-full max-w-6xl ">
+            <div className="mobile-frame">
+              <div ref={screenRef} className="mobile-screen">
+                <iframe
+                  key={activeRoleData.id}
+                  src={activeRoleData.src}
+                  className="w-full h-full"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Right Role Selectors */}
