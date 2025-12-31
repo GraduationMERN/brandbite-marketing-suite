@@ -194,7 +194,7 @@ const RoleBasedDemo = () => {
             )}
           </div>
           
-          <div ref={desktopRef} className="order-1 block lg:hidden  lg:order-2 w-full max-w-6xl ">
+          <div ref={desktopRef} className="order-1 block lg:hidden  lg:order-2 w-full max-w-5xl ">
             <div className="mobile-frame">
               <div ref={screenRef} className="mobile-screen">
                 <iframe
